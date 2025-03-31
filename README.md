@@ -1,14 +1,14 @@
 <div align="center">
 	<a href="https://frappehr.com">
-		<img src="https://raw.githubusercontent.com/frappe/hrms/develop/hrms/public/images/kanivin-hr-logo.png" height="128" alt="Frappe HR Logo">
+		<img src="https://raw.githubusercontent.com/Kanivin/hrms/develop/hrms/public/images/kanivin-hr-logo.png" height="128" alt="Kanivin HR Logo">
 	</a>
-	<h2>Frappe HR</h2>
+	<h2>Kanivin HR</h2>
 	<p align="center">
 		<p>Open Source, modern, and easy-to-use HR and Payroll Software for all organizations</p>
 	</p>
 
-[![CI](https://github.com/frappe/hrms/actions/workflows/ci.yml/badge.svg?branch=develop)](https://github.com/frappe/hrms/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/frappe/hrms/branch/develop/graph/badge.svg?token=0TwvyUg3I5)](https://codecov.io/gh/frappe/hrms)
+[![CI](https://github.com/Kanivin/hrms/actions/workflows/ci.yml/badge.svg?branch=develop)](https://github.com/Kanivin/hrms/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/Kanivin/hrms/branch/develop/graph/badge.svg?token=0TwvyUg3I5)](https://codecov.io/gh/Kanivin/hrms)
 
 [https://frappehr.com](https://frappehr.com)
 
@@ -22,7 +22,7 @@
 
 ## Introduction
 
-Frappe HR has everything you need to drive excellence within the company. It's a complete HRMS solution with over 13 different modules right from Employee Management, Onboarding, Leaves, to Payroll, Taxation, and more!
+Kanivin HR has everything you need to drive excellence within the company. It's a complete HRMS solution with over 13 different modules right from Employee Management, Onboarding, Leaves, to Payroll, Taxation, and more!
 
 ![HRMS](hrms.png)
 
@@ -61,13 +61,13 @@ Frappe HR has everything you need to drive excellence within the company. It's a
 
 ## Learning and Community
 
-1. [Documentation](https://docs.frappe.io/hr) - Extensive documentation for Frappe HR.
+1. [Documentation](https://docs.frappe.io/hr) - Extensive documentation for Kanivin HR.
 2. [User Forum](https://discuss.kanierp.com/) - Engage with the community of ERPNext users and service providers.
 3. [Telegram Group](https://t.me/frappehr) - Get instant help from the community of users.
 
 ## Contribute
 
-1. [Issue Guidelines](https://github.com/frappe/kanierp/wiki/Issue-Guidelines) - [Create an issue](https://github.com/frappe/hrms/issues/new)
+1. [Issue Guidelines](https://github.com/frappe/kanierp/wiki/Issue-Guidelines) - [Create an issue](https://github.com/Kanivin/hrms/issues/new)
 1. [Contribution Guidelines](https://github.com/frappe/kanierp/wiki/Contribution-Guidelines)
 
 ## License

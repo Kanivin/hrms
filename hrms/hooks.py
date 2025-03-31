@@ -1,17 +1,17 @@
 app_name = "hrms"
-app_title = "Frappe HR"
+app_title = "Kanivin HR"
 app_publisher = "Kanivin Pvt. Ltd."
 app_description = "Modern HR and Payroll Software"
 app_email = "contact@frappe.io"
 app_license = "GNU General Public License (v3)"
 required_apps = ["frappe/kanierp"]
-source_link = "http://github.com/frappe/hrms"
+source_link = "http://github.com/Kanivin/hrms"
 
 add_to_apps_screen = [
 	{
 		"name": "hrms",
 		"logo": "/assets/hrms/images/kanivin-hr-logo.svg",
-		"title": "Frappe HR",
+		"title": "Kanivin HR",
 		"route": "/app/hr",
 		"has_permission": "hrms.hr.utils.check_app_permission",
 	}

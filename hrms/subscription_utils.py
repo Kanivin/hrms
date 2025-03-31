@@ -121,7 +121,7 @@ def update_kanierp_roles(disable: bool = True):
 
 
 def set_app_logo():
-	frappe.db.set_single_value("Navbar Settings", "app_logo", "/assets/hrms/images/kanivin-hr-logo.svg")
+	frappe.db.set_single_value("Navbar Settings", "app_logo", "/assets/hrms/images/kanivin-hr-logo.png")
 
 
 def get_kanierp_roles() -> set:
