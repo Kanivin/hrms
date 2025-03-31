@@ -5,7 +5,7 @@ import frappe
 from frappe.tests.utils import FrappeTestCase
 from frappe.utils import add_days, nowdate
 
-from erpnext.setup.doctype.designation.test_designation import create_designation
+from kanierp.setup.doctype.designation.test_designation import create_designation
 
 from hrms.hr.doctype.job_applicant.job_applicant import get_applicant_to_hire_percentage
 from hrms.hr.doctype.job_offer.job_offer import get_offer_acceptance_rate

@@ -6,9 +6,9 @@ frappe.treeview_settings["Goal"] = {
 		{
 			fieldname: "company",
 			fieldtype: "Select",
-			options: erpnext.utils.get_tree_options("company"),
+			options: kanierp.utils.get_tree_options("company"),
 			label: __("Company"),
-			default: erpnext.utils.get_tree_default("company"),
+			default: kanierp.utils.get_tree_default("company"),
 		},
 		{
 			fieldname: "appraisal_cycle",

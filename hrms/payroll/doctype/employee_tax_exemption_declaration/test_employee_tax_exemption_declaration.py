@@ -5,8 +5,8 @@ import frappe
 from frappe.tests.utils import FrappeTestCase
 from frappe.utils import add_months, getdate
 
-import erpnext
-from erpnext.setup.doctype.employee.test_employee import make_employee
+import kanierp
+from kanierp.setup.doctype.employee.test_employee import make_employee
 
 from hrms.hr.utils import DuplicateDeclarationError
 
@@ -37,9 +37,9 @@ class TestEmployeeTaxExemptionDeclaration(FrappeTestCase):
 			{
 				"doctype": "Employee Tax Exemption Declaration",
 				"employee": frappe.get_value("Employee", {"user_id": "employee@taxexemption.com"}, "name"),
-				"company": erpnext.get_default_company(),
+				"company": kanierp.get_default_company(),
 				"payroll_period": PAYROLL_PERIOD_NAME,
-				"currency": erpnext.get_default_currency(),
+				"currency": kanierp.get_default_currency(),
 				"declarations": [
 					dict(
 						exemption_sub_category="_Test Sub Category",
@@ -61,9 +61,9 @@ class TestEmployeeTaxExemptionDeclaration(FrappeTestCase):
 			{
 				"doctype": "Employee Tax Exemption Declaration",
 				"employee": frappe.get_value("Employee", {"user_id": "employee@taxexemption.com"}, "name"),
-				"company": erpnext.get_default_company(),
+				"company": kanierp.get_default_company(),
 				"payroll_period": PAYROLL_PERIOD_NAME,
-				"currency": erpnext.get_default_currency(),
+				"currency": kanierp.get_default_currency(),
 				"declarations": [
 					dict(
 						exemption_sub_category="_Test Sub Category",
@@ -83,9 +83,9 @@ class TestEmployeeTaxExemptionDeclaration(FrappeTestCase):
 			{
 				"doctype": "Employee Tax Exemption Declaration",
 				"employee": frappe.get_value("Employee", {"user_id": "employee@taxexemption.com"}, "name"),
-				"company": erpnext.get_default_company(),
+				"company": kanierp.get_default_company(),
 				"payroll_period": PAYROLL_PERIOD_NAME,
-				"currency": erpnext.get_default_currency(),
+				"currency": kanierp.get_default_currency(),
 				"declarations": [
 					dict(
 						exemption_sub_category="_Test Sub Category",
@@ -106,9 +106,9 @@ class TestEmployeeTaxExemptionDeclaration(FrappeTestCase):
 			{
 				"doctype": "Employee Tax Exemption Declaration",
 				"employee": frappe.get_value("Employee", {"user_id": "employee@taxexemption.com"}, "name"),
-				"company": erpnext.get_default_company(),
+				"company": kanierp.get_default_company(),
 				"payroll_period": PAYROLL_PERIOD_NAME,
-				"currency": erpnext.get_default_currency(),
+				"currency": kanierp.get_default_currency(),
 				"declarations": [
 					dict(
 						exemption_sub_category="_Test Sub Category",
@@ -432,7 +432,7 @@ def create_payroll_period(**args):
 			dict(
 				doctype="Payroll Period",
 				name=name,
-				company=args.company or erpnext.get_default_company(),
+				company=args.company or kanierp.get_default_company(),
 				start_date=args.start_date or date(date.today().year, 1, 1),
 				end_date=args.end_date or date(date.today().year, 12, 31),
 			)

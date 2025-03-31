@@ -2,8 +2,8 @@ import frappe
 from frappe.tests.utils import FrappeTestCase
 from frappe.utils import add_days, add_months, flt, get_year_ending, get_year_start, getdate
 
-from erpnext.setup.doctype.employee.test_employee import make_employee
-from erpnext.setup.doctype.holiday_list.test_holiday_list import set_holiday_list
+from kanierp.setup.doctype.employee.test_employee import make_employee
+from kanierp.setup.doctype.holiday_list.test_holiday_list import set_holiday_list
 
 from hrms.hr.doctype.leave_allocation.test_earned_leaves import (
 	allocate_earned_leaves_for_months,

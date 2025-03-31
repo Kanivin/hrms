@@ -7,9 +7,9 @@ import frappe
 from frappe.tests.utils import FrappeTestCase, change_settings
 from frappe.utils import add_days, add_months, cstr, flt
 
-import erpnext
-from erpnext.accounts.utils import get_fiscal_year, getdate, nowdate
-from erpnext.setup.doctype.employee.test_employee import make_employee
+import kanierp
+from kanierp.accounts.utils import get_fiscal_year, getdate, nowdate
+from kanierp.setup.doctype.employee.test_employee import make_employee
 
 from hrms.hr.doctype.employee_advance.employee_advance import (
 	create_return_through_additional_salary,
@@ -791,7 +791,7 @@ def get_payroll_entry(**args):
 	args = frappe._dict(args)
 
 	payroll_entry: PayrollEntry = frappe.new_doc("Payroll Entry")
-	payroll_entry.company = args.company or erpnext.get_default_company()
+	payroll_entry.company = args.company or kanierp.get_default_company()
 	payroll_entry.start_date = args.start_date or "2016-11-01"
 	payroll_entry.end_date = args.end_date or "2016-11-30"
 	payroll_entry.payment_account = get_payment_account()
@@ -831,7 +831,7 @@ def make_payroll_entry(**args):
 def get_payment_account():
 	return frappe.get_value(
 		"Account",
-		{"account_type": "Cash", "company": erpnext.get_default_company(), "is_group": 0},
+		{"account_type": "Cash", "company": kanierp.get_default_company(), "is_group": 0},
 		"name",
 	)
 

@@ -3,7 +3,7 @@
 
 var in_progress = false;
 
-frappe.provide("erpnext.accounts.dimensions");
+frappe.provide("kanierp.accounts.dimensions");
 
 frappe.ui.form.on("Payroll Entry", {
 	onload: function (frm) {
@@ -14,7 +14,7 @@ frappe.ui.form.on("Payroll Entry", {
 		}
 		frm.toggle_reqd(["payroll_frequency"], !frm.doc.salary_slip_based_on_timesheet);
 
-		erpnext.accounts.dimensions.setup_dimension_filters(frm, frm.doctype);
+		kanierp.accounts.dimensions.setup_dimension_filters(frm, frm.doctype);
 		frm.events.department_filters(frm);
 		frm.events.payroll_payable_account_filters(frm);
 
@@ -253,7 +253,7 @@ frappe.ui.form.on("Payroll Entry", {
 
 	company: function (frm) {
 		frm.events.clear_employee_table(frm);
-		erpnext.accounts.dimensions.update_dimension(frm, frm.doctype);
+		kanierp.accounts.dimensions.update_dimension(frm, frm.doctype);
 		frm.trigger("set_payable_account_and_currency");
 	},
 
@@ -274,14 +274,14 @@ frappe.ui.form.on("Payroll Entry", {
 	currency: function (frm) {
 		var company_currency;
 		if (!frm.doc.company) {
-			company_currency = erpnext.get_currency(frappe.defaults.get_default("Company"));
+			company_currency = kanierp.get_currency(frappe.defaults.get_default("Company"));
 		} else {
-			company_currency = erpnext.get_currency(frm.doc.company);
+			company_currency = kanierp.get_currency(frm.doc.company);
 		}
 		if (frm.doc.currency) {
 			if (company_currency != frm.doc.currency) {
 				frappe.call({
-					method: "erpnext.setup.utils.get_exchange_rate",
+					method: "kanierp.setup.utils.get_exchange_rate",
 					args: {
 						from_currency: frm.doc.currency,
 						to_currency: company_currency,

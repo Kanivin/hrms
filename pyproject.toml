@@ -43,7 +43,7 @@ docstring-code-format = true
 
 [tool.ruff.lint.isort.sections]
 "frappe" = ["frappe"]
-"erpnext" = ["erpnext"]
+"kanierp" = ["kanierp"]
 "hrms" = ["hrms"]
 
 [tool.ruff.lint.isort]
@@ -52,7 +52,7 @@ section-order = [
     "standard-library",
     "third-party",
     "frappe",
-    "erpnext",
+    "kanierp",
     "hrms",
     "first-party",
     "local-folder",
@@ -67,4 +67,4 @@ Repository = "https://github.com/frappe/hrms.git"
 
 [tool.bench.frappe-dependencies]
 frappe = ">=15.0.0,<16.0.0"
-erpnext = ">=15.0.0,<16.0.0"
+kanierp = ">=15.0.0,<16.0.0"

@@ -6,7 +6,7 @@ from datetime import date
 import frappe
 from frappe.tests.utils import FrappeTestCase
 
-from erpnext.setup.doctype.employee.test_employee import make_employee
+from kanierp.setup.doctype.employee.test_employee import make_employee
 
 from hrms.hr.doctype.leave_allocation.test_leave_allocation import create_leave_allocation
 from hrms.hr.doctype.leave_control_panel.leave_control_panel import LeaveControlPanel

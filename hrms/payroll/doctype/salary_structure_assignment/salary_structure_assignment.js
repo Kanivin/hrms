@@ -5,7 +5,7 @@ frappe.ui.form.on("Salary Structure Assignment", {
 	setup: function (frm) {
 		frm.set_query("employee", function () {
 			return {
-				query: "erpnext.controllers.queries.employee_query",
+				query: "kanierp.controllers.queries.employee_query",
 				filters: { company: frm.doc.company },
 			};
 		});
@@ -31,7 +31,7 @@ frappe.ui.form.on("Salary Structure Assignment", {
 		});
 
 		frm.set_query("payroll_payable_account", function () {
-			var company_currency = erpnext.get_currency(frm.doc.company);
+			var company_currency = kanierp.get_currency(frm.doc.company);
 			return {
 				filters: {
 					company: frm.doc.company,

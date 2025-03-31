@@ -4,7 +4,7 @@
 import frappe
 from frappe.tests.utils import FrappeTestCase
 
-from erpnext.setup.doctype.employee.test_employee import make_employee
+from kanierp.setup.doctype.employee.test_employee import make_employee
 
 from hrms.hr.page.organizational_chart.organizational_chart import get_children
 from hrms.tests.test_utils import create_company

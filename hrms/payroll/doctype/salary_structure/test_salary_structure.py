@@ -6,8 +6,8 @@ from frappe.tests.utils import FrappeTestCase
 from frappe.utils import add_years, cstr, date_diff, get_first_day, nowdate
 from frappe.utils.make_random import get_random
 
-import erpnext
-from erpnext.setup.doctype.employee.test_employee import make_employee
+import kanierp
+from kanierp.setup.doctype.employee.test_employee import make_employee
 
 from hrms.payroll.doctype.employee_tax_exemption_declaration.test_employee_tax_exemption_declaration import (
 	create_payroll_period,
@@ -32,7 +32,7 @@ class TestSalaryStructure(FrappeTestCase):
 		self.make_holiday_list()
 		frappe.db.set_value(
 			"Company",
-			erpnext.get_default_company(),
+			kanierp.get_default_company(),
 			"default_holiday_list",
 			"Salary Structure Test Holiday List",
 		)
@@ -110,7 +110,7 @@ class TestSalaryStructure(FrappeTestCase):
 			self.assertFalse("\n" in cstr(row.formula) or "\n" in cstr(row.condition))
 
 	def test_salary_structures_assignment(self):
-		company_currency = erpnext.get_default_currency()
+		company_currency = kanierp.get_default_currency()
 		salary_structure = make_salary_structure(
 			"Salary Structure Sample", "Monthly", currency=company_currency
 		)
@@ -170,7 +170,7 @@ def make_salary_structure(
 	base=None,
 ):
 	if not currency:
-		currency = erpnext.get_default_currency()
+		currency = kanierp.get_default_currency()
 
 	if frappe.db.exists("Salary Structure", salary_structure):
 		frappe.db.delete("Salary Structure", salary_structure)
@@ -178,7 +178,7 @@ def make_salary_structure(
 	details = {
 		"doctype": "Salary Structure",
 		"name": salary_structure,
-		"company": company or erpnext.get_default_company(),
+		"company": company or kanierp.get_default_company(),
 		"earnings": make_earning_salary_component(
 			setup=True,
 			test_tax=test_tax,
@@ -235,7 +235,7 @@ def create_salary_structure_assignment(
 	allow_duplicate=False,
 ):
 	if not currency:
-		currency = erpnext.get_default_currency()
+		currency = kanierp.get_default_currency()
 
 	if not allow_duplicate and frappe.db.exists("Salary Structure Assignment", {"employee": employee}):
 		frappe.db.sql("""delete from `tabSalary Structure Assignment` where employee=%s""", (employee))
@@ -263,7 +263,7 @@ def create_salary_structure_assignment(
 	salary_structure_assignment.salary_structure = salary_structure
 	salary_structure_assignment.currency = currency
 	salary_structure_assignment.payroll_payable_account = get_payable_account(company)
-	salary_structure_assignment.company = company or erpnext.get_default_company()
+	salary_structure_assignment.company = company or kanierp.get_default_company()
 	salary_structure_assignment.income_tax_slab = income_tax_slab
 	salary_structure_assignment.save(ignore_permissions=True)
 	salary_structure_assignment.submit()
@@ -272,5 +272,5 @@ def create_salary_structure_assignment(
 
 def get_payable_account(company=None):
 	if not company:
-		company = erpnext.get_default_company()
+		company = kanierp.get_default_company()
 	return frappe.db.get_value("Company", company, "default_payroll_payable_account")

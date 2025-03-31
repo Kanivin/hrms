@@ -1,9 +1,9 @@
 import frappe
 from frappe.utils import add_months, get_first_day, get_last_day, getdate, now_datetime
 
-from erpnext.setup.doctype.department.department import get_abbreviated_name
-from erpnext.setup.doctype.designation.test_designation import create_designation
-from erpnext.setup.utils import enable_all_roles_and_domains
+from kanierp.setup.doctype.department.department import get_abbreviated_name
+from kanierp.setup.doctype.designation.test_designation import create_designation
+from kanierp.setup.utils import enable_all_roles_and_domains
 
 
 def before_tests():
@@ -26,7 +26,7 @@ def before_tests():
 				"fy_end_date": f"{year}-12-31",
 				"language": "english",
 				"company_tagline": "Testing",
-				"email": "test@erpnext.com",
+				"email": "test@kanierp.com",
 				"password": "test",
 				"chart_of_accounts": "Standard",
 			}

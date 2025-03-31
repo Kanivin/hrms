@@ -5,7 +5,7 @@ import frappe
 from frappe.tests.utils import FrappeTestCase
 from frappe.utils.data import add_to_date, today
 
-from erpnext.setup.doctype.employee.test_employee import make_employee
+from kanierp.setup.doctype.employee.test_employee import make_employee
 
 from hrms.hr.doctype.leave_ledger_entry.leave_ledger_entry import expire_allocation
 

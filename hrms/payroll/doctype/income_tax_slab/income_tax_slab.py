@@ -5,10 +5,10 @@
 from frappe.model.document import Document
 
 # import frappe
-import erpnext
+import kanierp
 
 
 class IncomeTaxSlab(Document):
 	def validate(self):
 		if self.company:
-			self.currency = erpnext.get_company_currency(self.company)
+			self.currency = kanierp.get_company_currency(self.company)

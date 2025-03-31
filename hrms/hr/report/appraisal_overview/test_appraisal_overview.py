@@ -1,8 +1,8 @@
 import frappe
 from frappe.tests.utils import FrappeTestCase
 
-from erpnext.setup.doctype.designation.test_designation import create_designation
-from erpnext.setup.doctype.employee.test_employee import make_employee
+from kanierp.setup.doctype.designation.test_designation import create_designation
+from kanierp.setup.doctype.employee.test_employee import make_employee
 
 from hrms.hr.doctype.appraisal_cycle.test_appraisal_cycle import create_appraisal_cycle
 from hrms.hr.doctype.appraisal_template.test_appraisal_template import create_appraisal_template

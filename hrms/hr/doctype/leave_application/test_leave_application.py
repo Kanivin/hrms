@@ -15,8 +15,8 @@ from frappe.utils import (
 	nowdate,
 )
 
-from erpnext.setup.doctype.employee.test_employee import make_employee
-from erpnext.setup.doctype.holiday_list.test_holiday_list import set_holiday_list
+from kanierp.setup.doctype.employee.test_employee import make_employee
+from kanierp.setup.doctype.holiday_list.test_holiday_list import set_holiday_list
 
 from hrms.hr.doctype.attendance.attendance import mark_attendance
 from hrms.hr.doctype.leave_allocation.test_leave_allocation import create_leave_allocation

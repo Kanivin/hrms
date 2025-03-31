@@ -6,8 +6,8 @@ import frappe
 from frappe.tests.utils import FrappeTestCase
 from frappe.utils import add_days, get_time, get_year_ending, get_year_start, getdate, now_datetime
 
-from erpnext.setup.doctype.employee.test_employee import make_employee
-from erpnext.setup.doctype.holiday_list.test_holiday_list import set_holiday_list
+from kanierp.setup.doctype.employee.test_employee import make_employee
+from kanierp.setup.doctype.holiday_list.test_holiday_list import set_holiday_list
 
 from hrms.hr.doctype.leave_application.test_leave_application import get_first_sunday
 from hrms.hr.doctype.shift_type.shift_type import update_last_sync_of_checkin

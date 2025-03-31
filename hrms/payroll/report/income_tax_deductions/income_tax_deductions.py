@@ -6,13 +6,13 @@ import frappe
 from frappe import _
 from frappe.query_builder.functions import Extract
 
-import erpnext
+import kanierp
 
 Filters = frappe._dict
 
 
 def execute(filters: Filters = None) -> tuple:
-	is_indian_company = erpnext.get_region(filters.get("company")) == "India"
+	is_indian_company = kanierp.get_region(filters.get("company")) == "India"
 	columns = get_columns(is_indian_company)
 	data = get_data(filters, is_indian_company)
 

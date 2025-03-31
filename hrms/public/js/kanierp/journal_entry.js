@@ -39,11 +39,11 @@ frappe.ui.form.on("Journal Entry", {
 				};
 			}
 
-			// filters for erpnext doctypes
+			// filters for kanierp doctypes
 			if (jvd.reference_type === "Journal Entry") {
 				frappe.model.validate_missing(jvd, "account");
 				return {
-					query: "erpnext.accounts.doctype.journal_entry.journal_entry.get_against_jv",
+					query: "kanierp.accounts.doctype.journal_entry.journal_entry.get_against_jv",
 					filters: {
 						account: jvd.account,
 						party: jvd.party,

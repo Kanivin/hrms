@@ -5,7 +5,7 @@ import frappe
 from frappe.tests.utils import FrappeTestCase
 from frappe.utils import today
 
-from erpnext.setup.doctype.employee.test_employee import make_employee
+from kanierp.setup.doctype.employee.test_employee import make_employee
 
 
 class TestEmployeeGrievance(FrappeTestCase):

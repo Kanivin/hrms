@@ -5,8 +5,8 @@ import frappe
 from frappe.tests.utils import FrappeTestCase
 from frappe.utils import getdate
 
-import erpnext
-from erpnext.setup.doctype.employee.test_employee import make_employee
+import kanierp
+from kanierp.setup.doctype.employee.test_employee import make_employee
 
 from hrms.hr.doctype.upload_attendance.upload_attendance import get_data
 
@@ -18,7 +18,7 @@ class TestUploadAttendance(FrappeTestCase):
 	def setUpClass(cls):
 		super().setUpClass()
 		frappe.db.set_value(
-			"Company", erpnext.get_default_company(), "default_holiday_list", "_Test Holiday List"
+			"Company", kanierp.get_default_company(), "default_holiday_list", "_Test Holiday List"
 		)
 
 	def test_date_range(self):

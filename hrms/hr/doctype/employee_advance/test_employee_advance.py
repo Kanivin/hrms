@@ -5,8 +5,8 @@ import frappe
 from frappe.tests.utils import FrappeTestCase, change_settings
 from frappe.utils import flt, nowdate
 
-import erpnext
-from erpnext.setup.doctype.employee.test_employee import make_employee
+import kanierp
+from kanierp.setup.doctype.employee.test_employee import make_employee
 
 from hrms.hr.doctype.employee_advance.employee_advance import (
 	EmployeeAdvanceOverPayment,
@@ -331,7 +331,7 @@ def make_employee_advance(employee_name, args=None):
 	doc.employee = employee_name
 	doc.company = "_Test Company"
 	doc.purpose = "For site visit"
-	doc.currency = erpnext.get_company_currency("_Test company")
+	doc.currency = kanierp.get_company_currency("_Test company")
 	doc.exchange_rate = 1
 	doc.advance_amount = 1000
 	doc.posting_date = nowdate()

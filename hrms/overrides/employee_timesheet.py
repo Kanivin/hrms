@@ -1,7 +1,7 @@
 # Copyright (c) 2025, Kanivin Pvt. Ltd. and Contributors
 # License: GNU General Public License v3. See license.txt
 
-from erpnext.projects.doctype.timesheet.timesheet import Timesheet
+from kanierp.projects.doctype.timesheet.timesheet import Timesheet
 
 
 class EmployeeTimesheet(Timesheet):

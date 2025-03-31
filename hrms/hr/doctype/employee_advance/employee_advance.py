@@ -8,8 +8,8 @@ from frappe.model.document import Document
 from frappe.query_builder.functions import Sum
 from frappe.utils import flt, nowdate
 
-import erpnext
-from erpnext.accounts.doctype.journal_entry.journal_entry import get_default_bank_cash_account
+import kanierp
+from kanierp.accounts.doctype.journal_entry.journal_entry import get_default_bank_cash_account
 
 import hrms
 from hrms.hr.utils import validate_active_employee
@@ -177,7 +177,7 @@ class EmployeeAdvance(Document):
 		).run()[0][0] or 0.0
 
 	def check_linked_payment_entry(self):
-		from erpnext.accounts.utils import (
+		from kanierp.accounts.utils import (
 			remove_ref_doc_link_from_pe,
 			update_accounting_ledgers_after_reference_removal,
 		)
@@ -221,7 +221,7 @@ def make_bank_entry(dt, dn):
 			"reference_type": "Employee Advance",
 			"reference_name": doc.name,
 			"party_type": "Employee",
-			"cost_center": erpnext.get_default_cost_center(doc.company),
+			"cost_center": kanierp.get_default_cost_center(doc.company),
 			"party": doc.employee,
 			"is_advance": "Yes",
 		},
@@ -231,7 +231,7 @@ def make_bank_entry(dt, dn):
 		"accounts",
 		{
 			"account": payment_account.account,
-			"cost_center": erpnext.get_default_cost_center(doc.company),
+			"cost_center": kanierp.get_default_cost_center(doc.company),
 			"credit_in_account_currency": flt(paying_amount),
 			"account_currency": payment_account.account_currency,
 			"account_type": payment_account.account_type,
@@ -327,7 +327,7 @@ def make_return_entry(
 			"party_type": "Employee",
 			"party": employee,
 			"is_advance": "Yes",
-			"cost_center": erpnext.get_default_cost_center(company),
+			"cost_center": kanierp.get_default_cost_center(company),
 		},
 	)
 
@@ -345,7 +345,7 @@ def make_return_entry(
 			"account_currency": bank_cash_account.account_currency,
 			"account_type": bank_cash_account.account_type,
 			"exchange_rate": flt(exchange_rate) if bank_cash_account.account_currency == currency else 1,
-			"cost_center": erpnext.get_default_cost_center(company),
+			"cost_center": kanierp.get_default_cost_center(company),
 		},
 	)
 

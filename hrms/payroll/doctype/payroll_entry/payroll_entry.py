@@ -22,11 +22,11 @@ from frappe.utils import (
 	getdate,
 )
 
-import erpnext
-from erpnext.accounts.doctype.accounting_dimension.accounting_dimension import (
+import kanierp
+from kanierp.accounts.doctype.accounting_dimension.accounting_dimension import (
 	get_accounting_dimensions,
 )
-from erpnext.accounts.utils import get_fiscal_year
+from kanierp.accounts.utils import get_fiscal_year
 
 from hrms.payroll.doctype.salary_slip.salary_slip_loan_utils import if_lending_app_installed
 from hrms.payroll.doctype.salary_withholding.salary_withholding import link_bank_entry_in_salary_withholdings
@@ -552,7 +552,7 @@ class PayrollEntry(Document):
 			currencies = []
 			payable_amount = 0
 			accounting_dimensions = get_accounting_dimensions() or []
-			company_currency = erpnext.get_company_currency(self.company)
+			company_currency = kanierp.get_company_currency(self.company)
 
 			payable_amount = self.get_payable_amount_for_earnings_and_deductions(
 				accounts,
@@ -996,7 +996,7 @@ class PayrollEntry(Document):
 
 		accounts = []
 		currencies = []
-		company_currency = erpnext.get_company_currency(self.company)
+		company_currency = kanierp.get_company_currency(self.company)
 		accounting_dimensions = get_accounting_dimensions() or []
 
 		exchange_rate, amount = self.get_amount_and_exchange_rate_for_journal_entry(

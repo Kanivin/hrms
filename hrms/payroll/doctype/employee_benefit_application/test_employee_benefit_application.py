@@ -5,8 +5,8 @@ import frappe
 from frappe.tests.utils import FrappeTestCase
 from frappe.utils import add_days, date_diff, get_year_ending, get_year_start, getdate
 
-from erpnext.setup.doctype.employee.test_employee import make_employee
-from erpnext.setup.doctype.holiday_list.test_holiday_list import set_holiday_list
+from kanierp.setup.doctype.employee.test_employee import make_employee
+from kanierp.setup.doctype.holiday_list.test_holiday_list import set_holiday_list
 
 from hrms.hr.utils import get_holiday_dates_for_employee
 from hrms.payroll.doctype.employee_benefit_application.employee_benefit_application import (

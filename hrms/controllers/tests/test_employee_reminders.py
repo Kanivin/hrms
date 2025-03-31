@@ -7,7 +7,7 @@ import frappe
 from frappe.tests.utils import FrappeTestCase
 from frappe.utils import add_months, getdate
 
-from erpnext.setup.doctype.employee.test_employee import make_employee
+from kanierp.setup.doctype.employee.test_employee import make_employee
 
 from hrms.controllers.employee_reminders import send_holidays_reminder_in_advance
 from hrms.hr.doctype.hr_settings.hr_settings import set_proceed_with_frequency_change
@@ -18,7 +18,7 @@ class TestEmployeeReminders(FrappeTestCase):
 	@classmethod
 	def setUpClass(cls):
 		super().setUpClass()
-		from erpnext.setup.doctype.holiday_list.test_holiday_list import make_holiday_list
+		from kanierp.setup.doctype.holiday_list.test_holiday_list import make_holiday_list
 
 		# Create a test holiday list
 		test_holiday_dates = cls.get_test_holiday_dates()
@@ -82,7 +82,7 @@ class TestEmployeeReminders(FrappeTestCase):
 		frappe.db.sql("delete from `tabEmail Queue Recipient`")
 
 	def test_is_holiday(self):
-		from erpnext.setup.doctype.employee.employee import is_holiday
+		from kanierp.setup.doctype.employee.employee import is_holiday
 
 		self.assertTrue(is_holiday(self.test_employee.name))
 		self.assertTrue(is_holiday(self.test_employee.name, date=self.test_holiday_dates[1]))

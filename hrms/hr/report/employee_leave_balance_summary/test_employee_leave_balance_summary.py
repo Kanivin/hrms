@@ -6,8 +6,8 @@ import frappe
 from frappe.tests.utils import FrappeTestCase
 from frappe.utils import add_days, flt, get_year_ending, get_year_start, getdate
 
-from erpnext.setup.doctype.employee.test_employee import make_employee
-from erpnext.setup.doctype.holiday_list.test_holiday_list import set_holiday_list
+from kanierp.setup.doctype.employee.test_employee import make_employee
+from kanierp.setup.doctype.holiday_list.test_holiday_list import set_holiday_list
 
 from hrms.hr.doctype.leave_application.test_leave_application import make_allocation_record
 from hrms.hr.doctype.leave_ledger_entry.leave_ledger_entry import process_expired_allocation

@@ -76,7 +76,7 @@ frappe.ui.form.on("Bulk Salary Structure Assignment", {
 			};
 		});
 		frm.set_query("payroll_payable_account", function () {
-			const company_currency = erpnext.get_currency(frm.doc.company);
+			const company_currency = kanierp.get_currency(frm.doc.company);
 			return {
 				filters: {
 					company: frm.doc.company,

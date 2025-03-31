@@ -34,7 +34,7 @@ class OverlappingShiftAttendanceError(frappe.ValidationError):
 
 class Attendance(Document):
 	def validate(self):
-		from erpnext.controllers.status_updater import validate_status
+		from kanierp.controllers.status_updater import validate_status
 
 		validate_status(self.status, ["Present", "Absent", "On Leave", "Half Day", "Work From Home"])
 		validate_active_employee(self.employee)

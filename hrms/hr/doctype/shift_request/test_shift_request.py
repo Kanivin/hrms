@@ -5,7 +5,7 @@ import frappe
 from frappe.tests.utils import FrappeTestCase, change_settings
 from frappe.utils import add_days, nowdate
 
-from erpnext.setup.doctype.employee.test_employee import make_employee
+from kanierp.setup.doctype.employee.test_employee import make_employee
 
 from hrms.hr.doctype.shift_request.shift_request import OverlappingShiftRequestError
 from hrms.hr.doctype.shift_type.test_shift_type import setup_shift_type
